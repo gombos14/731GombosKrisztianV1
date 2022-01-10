@@ -1,13 +1,14 @@
-package v1.shopanwendung;
-
+import org.junit.Test;
 import v1.shopanwendung.Controller.BestellungController;
 import v1.shopanwendung.Model.Bestellung;
 import v1.shopanwendung.Model.Produkt;
 
 import java.util.Arrays;
 
-public class Main {
-    public static void main(String[] args) {
+public class BestellungTest {
+
+    @Test
+    public void addTest() {
         Produkt produkt1 = new Produkt("ware1", 5);
         Produkt produkt2 = new Produkt("ware2", 7);
         Produkt produkt3 = new Produkt("ware3", 8);
@@ -20,6 +21,7 @@ public class Main {
         bc.addBestellung(bestellung1);
         bc.addBestellung(bestellung2);
 
-        bc.sortierenNachGesamtpreis().forEach(System.out::println);
+        assert(bestellung1.getGesamtPreis() == 12);
+        assert(bestellung2.getGesamtPreis() == 10);
     }
 }

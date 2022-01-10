@@ -43,6 +43,11 @@ public class BestellungController {
         this.bestellungRepository.set(index, b);
     }
 
+
+    /**
+     * Returns a sorted list of orders sorted by Gesamtpreis
+     * @return
+     */
     public List<Bestellung> sortierenNachGesamtpreis() {
         return this.bestellungRepository.stream().sorted((b1, b2) -> b2.getGesamtPreis() - b1.getGesamtPreis()).collect(Collectors.toList());
     }

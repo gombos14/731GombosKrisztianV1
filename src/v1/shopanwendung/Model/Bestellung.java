@@ -41,4 +41,13 @@ public class Bestellung {
     public int getGesamtPreis() {
         return this.produktList.stream().map(Produkt::getPreis).mapToInt(Integer::intValue).sum();
     }
+
+    @Override
+    public String toString() {
+        return "Bestellung{" +
+                "bestellnr=" + bestellnr +
+                ", adresse='" + adresse + '\'' +
+                ", produktList=" + produktList +
+                '}';
+    }
 }
